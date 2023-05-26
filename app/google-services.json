@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "340363075040",
+    "project_id": "shree-bajrang-steel-udyog",
+    "storage_bucket": "shree-bajrang-steel-udyog.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340363075040:android:afc8cec9415ce5c0525f85",
+        "android_client_info": {
+          "package_name": "com.breezefsmshreebajrangsteeludyog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "340363075040-o18kjckooejsf6e5govqo2lbe951fv0f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfZayfAgri0VslvS1uEBmVnkAZJl7wyek"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "340363075040-o18kjckooejsf6e5govqo2lbe951fv0f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

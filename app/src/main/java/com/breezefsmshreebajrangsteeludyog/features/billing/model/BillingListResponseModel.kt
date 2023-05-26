@@ -1,0 +1,10 @@
+package com.breezefsmshreebajrangsteeludyog.features.billing.model
+
+import com.breezefsmshreebajrangsteeludyog.base.BaseResponse
+
+/**
+ * Created by Saikat on 20-02-2019.
+ */
+class BillingListResponseModel : BaseResponse() {
+    var billing_list: ArrayList<BillingListDataModel>? = null
+}
