@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.breezefsmshreebajrangsteeludyog.R
 import com.breezefsmshreebajrangsteeludyog.app.domain.AddShopDBModelEntity
-import com.breezefsmshreebajrangsteeludyog.features.photoReg.adapter.AdapterUserTestList
+import com.breezefsmshreebajrangsteeludyog.features.performanceAPP.model.AdapterUserTestList
 import com.breezefsmshreebajrangsteeludyog.widgets.AppCustomEditText
 import com.breezefsmshreebajrangsteeludyog.widgets.AppCustomTextView
 
@@ -92,8 +92,10 @@ class PartySaleWiseListDatamodelDialog: DialogFragment() {
             override fun onTickUntickView(obj: PerformDataClass, isTick: Boolean) {
                 if(isTick){
                     selectedDataL.add(obj)
+                    finalL.filter { it.shop_id.equals(obj.shop_id) }.first().isChecked = true
                 } else{
                     selectedDataL.remove(obj)
+                    finalL.filter { it.shop_id.equals(obj.shop_id) }.first().isChecked = false
                 }
             }
         },{

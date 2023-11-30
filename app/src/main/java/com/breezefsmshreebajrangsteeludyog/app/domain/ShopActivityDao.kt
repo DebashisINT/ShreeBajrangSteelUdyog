@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import com.breezefsmshreebajrangsteeludyog.app.AppConstant
+import com.breezefsmshreebajrangsteeludyog.features.marketAssist.ShopActivityCnt
 
 /**
  * Created by Pratishruti on 07-12-2017.
@@ -234,4 +235,23 @@ interface ShopActivityDao {
 
     @Query("update shop_activity set isnewShop=:isnewShop,isUploaded=:isUploaded where shopid=:shopId and date=:date")
     fun updateTest(isnewShop: Boolean, shopId: String, date: String,isUploaded: Boolean)
+
+    @Query("select * from shop_activity where shopid=:shopid order by shopActivityId desc limit 1")
+    fun getLastRow(shopid: String):ShopActivityEntity
+
+    @Query("select * from shop_activity where shopid=:shopid order by shopActivityId desc limit 30")
+    fun getShopActivity(shopid: String):List<ShopActivityEntity>
+
+    @Query("select * from shop_activity where shopid=:shopid and date(shop_activity.visited_date) in \n" +
+            "(select date(order_details_list.date) from order_details_list where shop_id=:shopid) \n" +
+            "order by shopActivityId desc limit 30")
+    fun getShopActivityOrderWise(shopid: String):List<ShopActivityEntity>
+
+    @Query("select shopid,count(shopid) as cnt from shop_activity group by shopid")
+    fun getCUstomShopActivityCount():List<ShopActivityCnt>
+
+    @Query("Select * from shop_activity where shopid=:shopId and date=:date ORDER by shopActivityId DESC")
+    fun getMultipleVisitShopByShopId(shopId: String, date: String): List<ShopActivityEntity>
+
+
 }
